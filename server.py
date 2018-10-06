@@ -33,6 +33,14 @@ class Application(tornado.web.Application):
 
 
 def main():
+    # 设置日志文件保存目录
+    options.log_file_prefix = config.log_path
+    # 设置日志输出等级
+    options.logging = config.log_level
+    # 设置日志文件切割大小
+    # options.log_file_max_size = 128
+
+    # 转换命令行参数
     tornado.options.parse_command_line()
     app = Application(handlers, **config.settings)
     http_server = tornado.httpserver.HTTPServer(app)
