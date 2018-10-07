@@ -5,12 +5,21 @@ __date__ = '2018/10/5 4:07 PM'
 """
 
 from tornado.web import RequestHandler, StaticFileHandler
+from utils.session import Session
 
 import json
 
 
 class BaseHandler(RequestHandler):
     """请求处理基类"""
+
+    def get_current_user(self):
+        """
+        判断用户登录是否成功
+        :return: 登陆成功返回用户的昵称，否则返回None
+        """
+        self.session = Session(self)
+        return self.session.data.get("name")
 
     @property
     def db(self):

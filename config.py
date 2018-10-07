@@ -35,3 +35,6 @@ log_path = os.path.join(os.path.dirname(__file__), 'logs/log')
 
 # 日志等级
 log_level = "debug"
+
+# 密码加密密钥
+passwd_hash_key = "F3fv87mzTI6fKbP13gUNZI+eZrL1VEzguyX1+AVsRdI="
