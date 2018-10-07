@@ -5,7 +5,7 @@ __date__ = '2018/10/5 3:59 PM'
 """
 
 from tornado.options import define, options
-from urls import handlers
+from urls import urls
 
 import config
 import tornado.ioloop
@@ -42,7 +42,7 @@ def main():
 
     # 转换命令行参数
     tornado.options.parse_command_line()
-    app = Application(handlers, **config.settings)
+    app = Application(urls, **config.settings)
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(options.port)
     tornado.ioloop.IOLoop.current().start()

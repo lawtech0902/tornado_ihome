@@ -1,0 +1,67 @@
+[D 181006 21:14:47 selector_events:65] Using selector: KqueueSelector
+[I 181006 21:14:55 web:2162] 304 GET / (::1) 9.00ms
+[E 181006 21:15:45 web:1670] Uncaught exception GET /api/imagecode?cur_code_id=123&pre_code_id= (::1)
+    HTTPServerRequest(protocol='http', host='localhost:8000', method='GET', uri='/api/imagecode?cur_code_id=123&pre_code_id=', version='HTTP/1.1', remote_ip='::1')
+    Traceback (most recent call last):
+      File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/Users/lawtech/PycharmProjects/tornado_ihome/handlers/verifycode.py", line 25, in get
+        name, text, image = captcha.generate_captcha()
+      File "/Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py", line 217, in generate_captcha
+        self.initialize()
+      File "/Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py", line 71, in initialize
+        self._text = text if text else random.sample(string.uppercase + string.uppercase + '3456789', 4)
+    AttributeError: module 'string' has no attribute 'uppercase'
+[E 181006 21:15:45 web:2162] 500 GET /api/imagecode?cur_code_id=123&pre_code_id= (::1) 9.76ms
+[I 181006 21:17:14 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py modified; restarting server
+[D 181006 21:17:15 selector_events:65] Using selector: KqueueSelector
+[I 181006 21:17:36 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py modified; restarting server
+[D 181006 21:17:37 selector_events:65] Using selector: KqueueSelector
+[D 181006 21:17:41 selector_events:65] Using selector: KqueueSelector
+[E 181006 21:17:43 web:1670] Uncaught exception GET /api/imagecode?cur_code_id=123&pre_code_id= (::1)
+    HTTPServerRequest(protocol='http', host='localhost:8000', method='GET', uri='/api/imagecode?cur_code_id=123&pre_code_id=', version='HTTP/1.1', remote_ip='::1')
+    Traceback (most recent call last):
+      File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PIL/ImageFile.py", line 485, in _save
+        fh = fp.fileno()
+    io.UnsupportedOperation: fileno
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/Users/lawtech/PycharmProjects/tornado_ihome/handlers/verifycode.py", line 25, in get
+        name, text, image = captcha.generate_captcha()
+      File "/Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py", line 218, in generate_captcha
+        return self.captcha("")
+      File "/Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py", line 211, in captcha
+        image.save(out, format=fmt)
+      File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PIL/Image.py", line 1969, in save
+        save_handler(self, fp, filename)
+      File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PIL/JpegImagePlugin.py", line 761, in _save
+        ImageFile._save(im, fp, [("jpeg", (0, 0)+im.size, 0, rawmode)], bufsize)
+      File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/PIL/ImageFile.py", line 500, in _save
+        fp.write(d)
+    TypeError: string argument expected, got 'bytes'
+[E 181006 21:17:43 web:2162] 500 GET /api/imagecode?cur_code_id=123&pre_code_id= (::1) 74.05ms
+[I 181006 21:19:55 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/utils/captcha/captcha.py modified; restarting server
+[D 181006 21:19:56 selector_events:65] Using selector: KqueueSelector
+[D 181006 21:20:03 selector_events:65] Using selector: KqueueSelector
+[I 181006 21:20:06 web:2162] 200 GET /api/imagecode?cur_code_id=123&pre_code_id= (::1) 55.18ms
+[D 181006 23:38:06 selector_events:65] Using selector: KqueueSelector
+[I 181006 23:38:27 web:2162] 200 GET /api/imagecode?c=123&p= (::1) 99.25ms
+[I 181007 14:39:56 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:39:57 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:40:10 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:40:10 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:41:29 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:41:29 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:41:49 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:41:49 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:42:03 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:42:03 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:42:23 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:42:24 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:43:10 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/base.py modified; restarting server
+[D 181007 14:43:10 selector_events:65] Using selector: KqueueSelector
+[I 181007 14:47:02 autoreload:199] /Users/lawtech/PycharmProjects/tornado_ihome/handlers/verifycode.py modified; restarting server
