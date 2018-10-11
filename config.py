@@ -38,3 +38,6 @@ log_level = "debug"
 
 # 密码加密密钥
 passwd_hash_key = "F3fv87mzTI6fKbP13gUNZI+eZrL1VEzguyX1+AVsRdI="
+
+# 七牛空间域名
+image_url_prefix = "http://pg8dp3e10.bkt.clouddn.com/"
